@@ -21,7 +21,7 @@ docker-compose up -d
 ### 2. Inyección de Reglas en Suricata
 Para que Suricata detecte el ataque de la simulación, asegúrate de que el motor de firmas incluya tu archivo local. Añade o verifica que tu regla en `maqueta-suricata/local.rules` contenga la firma de detección:
 ```text
-alert http any any -> any any (msg:"ALERTA LABORAL: Intento de acceso a panel administrativo simulado"; content:"admin_panel"; sid:1000001; rev:1;)
+alert http any any -> any any (msg:"ALERTA LABORAL: Intento de acceso a panel administrativo simulado"; content:"admin_panel"; sid:1000000; rev:1;)
 ```
 *Asegúrate de copiar este archivo a la ruta de firmas operativas de tu Suricata (`/etc/suricata/rules/local.rules`) y reiniciar el servicio.*
 
@@ -36,8 +36,8 @@ Crea un script llamado `simular_ataque.sh` en tu entorno de Kali Linux para auto
 cat << 'EOF' > simular_ataque.sh
 #!/bin/bash
 # Reemplaza con la IP real del servidor donde corre LocalStack/Suricata
-TARGET_IP="127.0.0.1" 
-PORT="4566"
+TARGET_IP="Variable" 
+PORT="variable"
 
 echo "=================================================="
 echo " INICIANDO SIMULACIÓN DE ATAQUE DESDE KALI LINUX"
