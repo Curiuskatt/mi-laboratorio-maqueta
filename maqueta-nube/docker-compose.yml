@@ -5,5 +5,5 @@ services:
     ports:
       - "4566:4566"
     environment:
-      - SERVICES=s3
-      - ACTIVATE_PRO=false
+      - SERVICES=${SERVICES}
+      - ACTIVATE_PRO=${ACTIVATE_PRO}
